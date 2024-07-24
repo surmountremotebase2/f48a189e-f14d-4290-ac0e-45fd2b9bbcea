@@ -9,7 +9,7 @@ class TradingStrategy(Strategy):
 
     @property
     def interval(self):
-        return "1day" # Specified 3-day time frame
+        return "3day" # Specified 3-day time frame
 
     @property
     def assets(self):
@@ -21,25 +21,25 @@ class TradingStrategy(Strategy):
         
         for ticker in self.tickers:
             rsi_value = RSI(ticker, data[ticker], length=14)[-1] # Get the latest RSI value
-            bb = BB(ticker, data[ticker], length=14, std=2) # Get Bollinger Bands
+         #   bb = BB(ticker, data[ticker], length=14, std=2) # Get Bollinger Bands
             
             # Dummy implementation for WaveTrend indicator
             # wave_trend = calculateWaveTrend(data[ticker])
             
             # DMI and ADX indicators
-            adx_value = ADX(ticker, data[ticker], length=14)[-1] # Get the latest ADX value
+         #   adx_value = ADX(ticker, data[ticker], length=14)[-1] # Get the latest ADX value
             
             # SZQMOM indicator (hypothetical implementation)
             # szqmom = calculateSZQMOM(data[ticker])
             
             # Trading logic (hypothetical - replace with actual conditions)
             # This is a placeholder for how one might decide on allocations given indicator values
-            if rsi_value > 70 and adx_value > 25: # Oversold condition with strong trend
-                allocation_dict[ticker] = 0 # Full sell signal
-            elif rsi_value < 30 and adx_value > 25: # Overbought condition with strong trend
-                allocation_dict[ticker] = 1 # Full buy signal
-            else:
-                allocation_dict[ticker] = 0.5 # Neutral stance
+          #  if rsi_value > 70 and adx_value > 25: # Oversold condition with strong trend
+          #      allocation_dict[ticker] = 0 # Full sell signal
+          #  elif rsi_value < 30 and adx_value > 25: # Overbought condition with strong trend
+          #      allocation_dict[ticker] = 1 # Full buy signal
+          #  else:
+          #      allocation_dict[ticker] = 0.5 # Neutral stance
             
             # Additional conditions for WaveTrend and SZQMOM would go here
             
