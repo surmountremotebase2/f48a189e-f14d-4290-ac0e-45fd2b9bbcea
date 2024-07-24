@@ -9,7 +9,7 @@ class TradingStrategy(Strategy):
 
     @property
     def interval(self):
-        return "3day" # Specified 3-day time frame
+        return "1day" # Specified 3-day time frame
 
     @property
     def assets(self):
